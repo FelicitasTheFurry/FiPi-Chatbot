@@ -1,0 +1,12 @@
+version: "3.1"
+
+stories:
+  - story: Anfrage nach Lehrer für ein Lernfeld
+    steps:
+      - intent: lehrer_fuer_lernfeld
+      - action: utter_lehrer_fuer_lernfeld
+
+  - story: Anfrage nach Lehrer für ein Fach
+    steps:
+      - intent: lehrer_fuer_fach
+      - action: utter_lehrer_fuer_fach

@@ -1,0 +1,75 @@
+version: "3.1"
+nlu:
+  - intent: lehrer_fuer_lernfeld
+    examples: |
+      - Wer unterrichtet [LF-1](lernfeld)?
+      - Wer ist der Lehrer für [LF-1](lernfeld)?
+      - Wer macht [LF-1](lernfeld)?
+      - Wer ist für [LF-1](lernfeld) zuständig?
+      - Wer unterrichtet [LF-2](lernfeld)?
+      - Wer ist der Lehrer für [LF-2](lernfeld)?
+      - Wer macht [LF-2](lernfeld)?
+      - Wer ist für [LF-2](lernfeld) zuständig?
+      - Wer unterrichtet [LF-3](lernfeld)?
+      - Wer ist der Lehrer für [LF-3](lernfeld)?
+      - Wer macht [LF-3](lernfeld)?
+      - Wer ist für [LF-3](lernfeld) zuständig?
+      - Wer unterrichtet [LF-4](lernfeld)?
+      - Wer ist der Lehrer für [LF-4](lernfeld)?
+      - Wer macht [LF-4](lernfeld)?
+      - Wer ist für [LF-4](lernfeld) zuständig?
+      - Wer unterrichtet [LF-5](lernfeld)?
+      - Wer ist der Lehrer für [LF-5](lernfeld)?
+      - Wer macht [LF-5](lernfeld)?
+      - Wer ist für [LF-5](lernfeld) zuständig?
+      - Wer unterrichtet [LF-6](lernfeld)?
+      - Wer ist der Lehrer für [LF-6](lernfeld)?
+      - Wer macht [LF-6](lernfeld)?
+      - Wer ist für [LF-6](lernfeld) zuständig?
+      - Wer unterrichtet [LF-7](lernfeld)?
+      - Wer ist der Lehrer für [LF-7](lernfeld)?
+      - Wer macht [LF-7](lernfeld)?
+      - Wer ist für [LF-7](lernfeld) zuständig?
+      - Wer unterrichtet [LF-8](lernfeld)?
+      - Wer ist der Lehrer für [LF-8](lernfeld)?
+      - Wer macht [LF-8](lernfeld)?
+      - Wer ist für [LF-8](lernfeld) zuständig?
+      - Wer unterrichtet [LF-9](lernfeld)?
+      - Wer ist der Lehrer für [LF-9](lernfeld)?
+      - Wer macht [LF-9](lernfeld)?
+      - Wer ist für [LF-9](lernfeld) zuständig?
+      - Wer unterrichtet [LF-10](lernfeld)?
+      - Wer ist der Lehrer für [LF-10](lernfeld)?
+      - Wer macht [LF-10](lernfeld)?
+      - Wer ist für [LF-10](lernfeld) zuständig?
+      - Wer unterrichtet [LF-11](lernfeld)?
+      - Wer ist der Lehrer für [LF-11](lernfeld)?
+      - Wer macht [LF-11](lernfeld)?
+      - Wer ist für [LF-11](lernfeld) zuständig?
+      - Wer unterrichtet [LF-12](lernfeld)?
+      - Wer ist der Lehrer für [LF-12](lernfeld)?
+      - Wer macht [LF-12](lernfeld)?
+      - Wer ist für [LF-12](lernfeld) zuständig?
+
+  - intent: lehrer_fuer_fach
+    examples: |
+      - Wer unterrichtet [Deutsch](fach)?
+      - Wer ist der Lehrer für [Deutsch](fach)?
+      - Wer macht [Deutsch](fach)?
+      - Wer ist für [Deutsch](fach) zuständig?
+      - Wer unterrichtet [Englisch](fach)?
+      - Wer ist der Lehrer für [Englisch](fach)?
+      - Wer macht [Englisch](fach)?
+      - Wer ist für [Englisch](fach) zuständig?
+      - Wer unterrichtet [Ethik](fach)?
+      - Wer ist der Lehrer für [Ethik](fach)?
+      - Wer macht [Ethik](fach)?
+      - Wer ist für [Ethik](fach) zuständig?
+      - Wer unterrichtet [Sozialkunde](fach)?
+      - Wer ist der Lehrer für [Sozialkunde](fach)?
+      - Wer macht [Sozialkunde](fach)?
+      - Wer ist für [Sozialkunde](fach) zuständig?
+      - Wer unterrichtet [Sport](fach)?
+      - Wer ist der Lehrer für [Sport](fach)?
+      - Wer macht [Sport](fach)?
+      - Wer ist für [Sport](fach) zuständig?

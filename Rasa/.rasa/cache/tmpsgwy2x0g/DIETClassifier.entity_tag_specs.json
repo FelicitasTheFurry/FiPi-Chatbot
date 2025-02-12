@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-fach",
+      "2": "I-fach",
+      "3": "L-fach",
+      "4": "U-fach",
+      "5": "B-lernfeld",
+      "6": "I-lernfeld",
+      "7": "L-lernfeld",
+      "8": "U-lernfeld",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-fach": 1,
+      "I-fach": 2,
+      "L-fach": 3,
+      "U-fach": 4,
+      "B-lernfeld": 5,
+      "I-lernfeld": 6,
+      "L-lernfeld": 7,
+      "U-lernfeld": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

@@ -1,0 +1,116 @@
+version: "3.1"
+
+intents:
+  - lehrer_fuer_lernfeld
+  - lehrer_fuer_fach
+
+entities:
+  - lernfeld
+  - fach
+
+slots:
+  lernfeld:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: lernfeld
+
+  fach:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: fach
+
+responses:
+  utter_lehrer_fuer_lernfeld:
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-1"
+      text: "Lernfeld 1 wird von Herr Hoyme unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-2"
+      text: "Lernfeld 2 wird von Herr Roth und Herr Neunemann unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-3"
+      text: "Lernfeld 3 wird von Herr Neunemann unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-4"
+      text: "Lernfeld 4 wird von Herr Schluckebier unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-5"
+      text: "Lernfeld 5 wird von Frau Rammelt unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-6"
+      text: "Lernfeld 6 wird von Herr Roth unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-7"
+      text: "Lernfeld 7 wird von Herr Schluckebier unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-8"
+      text: "Lernfeld 8 wird von Frau Rammelt unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-9"
+      text: "Lernfeld 9 wird von Herr Brau, Herr Hacke und Herr Neunemann unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-10"
+      text: "Lernfeld 10 wird von Herr von Hornbostel unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-11"
+      text: "Lernfeld 11 wird von Frau Rammelt unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-12"
+      text: "Lernfeld 12 wird von Frau Rammelt und Herr von Hornbostel unterrichtet."
+
+  utter_lehrer_fuer_fach:
+    - condition:
+        - type: slot
+          name: fach
+          value: "Deutsch"
+      text: "Deutsch wird von Frau Allstädt unterrichtet."
+    - condition:
+        - type: slot
+          name: fach
+          value: "Englisch"
+      text: "Englisch wird von Herr Hoyme unterrichtet."
+    - condition:
+        - type: slot
+          name: fach
+          value: "Ethik"
+      text: "Ethik wird von Frau Allstädt unterrichtet."
+    - condition:
+        - type: slot
+          name: fach
+          value: "Sozialkunde"
+      text: "Sozialkunde wird von Frau Göpel unterrichtet."
+    - condition:
+        - type: slot
+          name: fach
+          value: "Sport"
+      text: "Sport wird von Herr Neunemann unterrichtet."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,65 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "lehrer_fuer_fach": 1,
+        "lehrer_fuer_lernfeld": 2,
+        "nlu_fallback": 3,
+        "out_of_scope": 4,
+        "restart": 5,
+        "session_start": 6
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_ask_lernfeld": 13,
+        "action_ask_fach": 14,
+        "utter_fach_deutsch": 15,
+        "utter_fach_englisch": 16,
+        "utter_fach_ethik": 17,
+        "utter_fach_sozialkunde": 18,
+        "utter_fach_sport": 19,
+        "utter_lehrer_fuer_fach": 20,
+        "utter_lehrer_fuer_lernfeld": 21,
+        "utter_lernfeld_1": 22,
+        "utter_lernfeld_10": 23,
+        "utter_lernfeld_11": 24,
+        "utter_lernfeld_12": 25,
+        "utter_lernfeld_2": 26,
+        "utter_lernfeld_3": 27,
+        "utter_lernfeld_4": 28,
+        "utter_lernfeld_5": 29,
+        "utter_lernfeld_6": 30,
+        "utter_lernfeld_7": 31,
+        "utter_lernfeld_8": 32,
+        "utter_lernfeld_9": 33
+      },
+      "entities": {
+        "lehrer": 0,
+        "lernfeld": 1
+      },
+      "slots": {
+        "lernfeld_0": 0,
+        "lehrer_0": 1
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}
