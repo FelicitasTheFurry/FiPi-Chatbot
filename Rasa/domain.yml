@@ -236,6 +236,9 @@ responses:
           name: learnfield
           value: "LF-12"
       text: "LF-12 (Kundenspezifische Prozess- und Datenanalyse durchführen)."
+      
+utter_default:
+    - text: "Entschuldigung, das habe ich nicht verstanden. Kannst du das anders formulieren?"
 
 session_config:
   session_expiration_time: 60
