@@ -73,3 +73,29 @@ nlu:
       - Wer ist der Lehrer für [Sport](fach)?
       - Wer macht [Sport](fach)?
       - Wer ist für [Sport](fach) zuständig?
+
+  - intent: lehrer_taetigkeit
+    examples: |
+      - Was macht [Herr Hoyme](lehrer)?
+      - Welches Fach unterrichtet [Frau Rammelt](lehrer)?
+      - Was unterrichtet [Herr Neunemann](lehrer)?
+      - Welche Lernfelder lehrt [Herr Schluckebier](lehrer)?
+      - Was macht [Frau Allstädt](lehrer)?
+      - Welche Fächer unterrichtet [Herr Roth](lehrer)?
+      - Was lehrt [Herr von Hornbostel](lehrer)?
+
+
+  - intent: information_learnfield
+    examples: |
+      - Was ist [LF-1](learnfield)?
+      - Erkläre [LF-2](learnfield)
+      - Wofür steht [LF-3](learnfield)?
+      - Was bedeutet [LF-4](learnfield)?
+      - Worum geht es in [LF-5](learnfield)?
+      - Was beinhaltet [LF-6](learnfield)?
+      - Beschreibe [LF-7](learnfield)
+      - Was ist eigentlich [LF-8](learnfield)?
+      - Was lernt man in [LF-9](learnfield)?
+      - Kannst du mir [LF-10](learnfield) erklären?
+      - Wie lautet die Beschreibung von [LF-11](learnfield)?
+      - Erkläre mir bitte [LF-12](learnfield)

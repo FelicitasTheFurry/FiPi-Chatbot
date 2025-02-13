@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-fach",
+      "2": "I-fach",
+      "3": "L-fach",
+      "4": "U-fach",
+      "5": "B-lehrer",
+      "6": "I-lehrer",
+      "7": "L-lehrer",
+      "8": "U-lehrer",
+      "9": "B-lernfeld",
+      "10": "I-lernfeld",
+      "11": "L-lernfeld",
+      "12": "U-lernfeld",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-fach": 1,
+      "I-fach": 2,
+      "L-fach": 3,
+      "U-fach": 4,
+      "B-lehrer": 5,
+      "I-lehrer": 6,
+      "L-lehrer": 7,
+      "U-lehrer": 8,
+      "B-lernfeld": 9,
+      "I-lernfeld": 10,
+      "L-lernfeld": 11,
+      "U-lernfeld": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

@@ -3,10 +3,14 @@ version: "3.1"
 intents:
   - lehrer_fuer_lernfeld
   - lehrer_fuer_fach
+  - lehrer_taetigkeit
+  - information_learnfield
 
 entities:
   - lernfeld
   - fach
+  - lehrer
+  - learnfield
 
 slots:
   lernfeld:
@@ -20,6 +24,18 @@ slots:
     mappings:
       - type: from_entity
         entity: fach
+
+  lehrer:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: lehrer
+  
+  learnfield:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: learnfield
 
 responses:
   utter_lehrer_fuer_lernfeld:
@@ -110,6 +126,116 @@ responses:
           name: fach
           value: "Sport"
       text: "Sport wird von Herr Neunemann unterrichtet."
+
+  utter_lehrer_taetigkeit:
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr Hoyme"
+        text: "Herr Hoyme unterrichtet Lernfeld 1 und Englisch."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Frau Rammelt"
+        text: "Frau Rammelt unterrichtet Lernfeld 5, 8, 11 und 12."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr Neunemann"
+        text: "Herr Neunemann unterrichtet Lernfeld 2, 3, 9 und Sport."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr Schluckebier"
+        text: "Herr Schluckebier unterrichtet Lernfeld 4 und 7."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Frau Allstädt"
+        text: "Frau Allstädt unterrichtet Deutsch und Ethik."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr Roth"
+        text: "Herr Roth unterrichtet Lernfeld 2 und 6."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr von Hornbostel"
+        text: "Herr von Hornbostel unterrichtet Lernfeld 10 und 12."
+
+  utter_information_learnfield:
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-1"
+      text: "LF-1 (Planen, Vorbereiten und Durchführen von Arbeitsaufgaben in Abstimmung mit kundenspezifischen Geschäfts- und Leistungsprozessen)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-2"
+      text: "LF-2 (Informieren und Beraten von Kunden)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-3"
+      text: "LF-3 (Beurteilen marktgängiger IT-Systeme und kundenspezifischer Lösungen)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-4"
+      text: "LF-4 (Entwickeln, Erstellen und Betreuen von IT-Lösungen)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-5"
+      text: "LF-5 (Durchführen und Dokumentieren von qualitätssichernden Maßnahmen)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-6"
+      text: "LF-6 (Umsetzen, Integrieren und Prüfen von Maßnahmen zur IT-Sicherheit und zum Datenschutz)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-7"
+      text: "LF-7 (Erbringen der Leistungen und Auftragsabschluss)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-8"
+      text: "LF-8 (Betreiben von IT-Systemen)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-9"
+      text: "LF-9 (Inbetriebnehmen von Speicherlösungen)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-10"
+      text: "LF-10 (Werkzeuge des maschinellen Lernens einsetzen)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-11"
+      text: "LF-11 (Prozesse analysieren und gestalten)."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "LF-12"
+      text: "LF-12 (Kundenspezifische Prozess- und Datenanalyse durchführen)."
 
 session_config:
   session_expiration_time: 60

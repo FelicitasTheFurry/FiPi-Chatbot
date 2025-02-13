@@ -10,3 +10,13 @@ rules:
     steps:
       - intent: lehrer_fuer_fach
       - action: utter_lehrer_fuer_fach
+
+  - rule: Antwort auf Anfrage nach Lehrer Tätigkeit
+    steps:
+      - intent: lehrer_taetigkeit
+      - action: utter_lehrer_taetigkeit
+
+  - rule: Anfrage nach Inhalt von Lernfeld
+    steps:
+      - intent: information_lernfeld
+      - action: utter_information_lernfeld
