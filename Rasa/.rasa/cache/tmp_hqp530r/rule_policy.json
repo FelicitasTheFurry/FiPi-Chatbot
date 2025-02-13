@@ -1,0 +1,24 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"lehrer_fuer_lernfeld\"}}]": "utter_lehrer_fuer_lernfeld",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"lehrer_fuer_lernfeld\"}}, {\"prev_action\": {\"action_name\": \"utter_lehrer_fuer_lernfeld\"}, \"user\": {\"intent\": \"lehrer_fuer_lernfeld\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"lehrer_fuer_fach\"}}]": "utter_lehrer_fuer_fach",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"lehrer_fuer_fach\"}}, {\"prev_action\": {\"action_name\": \"utter_lehrer_fuer_fach\"}, \"user\": {\"intent\": \"lehrer_fuer_fach\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"teacher_kontakt\"}}]": "utter_teacher_kontakt",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"teacher_kontakt\"}}, {\"prev_action\": {\"action_name\": \"utter_teacher_kontakt\"}, \"user\": {\"intent\": \"teacher_kontakt\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"lehrer_taetigkeit\"}}]": "utter_lehrer_taetigkeit",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"lehrer_taetigkeit\"}}, {\"prev_action\": {\"action_name\": \"utter_lehrer_taetigkeit\"}, \"user\": {\"intent\": \"lehrer_taetigkeit\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"information_learnfield\"}}]": "utter_information_learnfield",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"information_learnfield\"}}, {\"prev_action\": {\"action_name\": \"utter_information_learnfield\"}, \"user\": {\"intent\": \"information_learnfield\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent back",
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start"
+    ]
+  }
+}

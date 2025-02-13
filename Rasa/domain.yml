@@ -5,12 +5,16 @@ intents:
   - lehrer_fuer_fach
   - lehrer_taetigkeit
   - information_learnfield
+  - teacher_kontakt
+  - greet
+  - goodbye
 
 entities:
   - lernfeld
   - fach
   - lehrer
   - learnfield
+  - teacher
 
 slots:
   lernfeld:
@@ -37,18 +41,24 @@ slots:
       - type: from_entity
         entity: learnfield
 
+  teacher:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: teacher
+
 responses:
   utter_lehrer_fuer_lernfeld:
     - condition:
         - type: slot
           name: lernfeld
           value: "LF-1"
-      text: "Lernfeld 1 wird von Herr Hoyme unterrichtet."
+      text: "Natürlich. Lernfeld 1 wird von Herr Hoyme unterrichtet."
     - condition:
         - type: slot
           name: lernfeld
           value: "LF-2"
-      text: "Lernfeld 2 wird von Herr Roth und Herr Neunemann unterrichtet."
+      text: "Ach, Lernfeld 2! Das wird von Herr Roth und Herr Neunemann unterrichtet."
     - condition:
         - type: slot
           name: lernfeld
@@ -63,7 +73,7 @@ responses:
         - type: slot
           name: lernfeld
           value: "LF-5"
-      text: "Lernfeld 5 wird von Frau Rammelt unterrichtet."
+      text: "Natürlich! Lernfeld 5 wird von Frau Rammelt unterrichtet. Sie ist eine sehr kompetente Lehrkraft."
     - condition:
         - type: slot
           name: lernfeld
@@ -73,7 +83,7 @@ responses:
         - type: slot
           name: lernfeld
           value: "LF-7"
-      text: "Lernfeld 7 wird von Herr Schluckebier unterrichtet."
+      text: "Kein Problem! Lernfeld 7 wird von Herr Schluckebier unterrichtet."
     - condition:
         - type: slot
           name: lernfeld
@@ -83,7 +93,7 @@ responses:
         - type: slot
           name: lernfeld
           value: "LF-9"
-      text: "Lernfeld 9 wird von Herr Brau, Herr Hacke und Herr Neunemann unterrichtet."
+      text: "Lernfeld 9 wird von Herr Brau, Herr Haake und Herr Neunemann unterrichtet."
     - condition:
         - type: slot
           name: lernfeld
@@ -98,7 +108,7 @@ responses:
         - type: slot
           name: lernfeld
           value: "LF-12"
-      text: "Lernfeld 12 wird von Frau Rammelt und Herr von Hornbostel unterrichtet."
+      text: "Lernfeld 12 wird von Frau Rammelt und Herr von Hornbostel unterrichtet. Ein starkes Duo!"
 
   utter_lehrer_fuer_fach:
     - condition:
@@ -168,77 +178,143 @@ responses:
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-1"
-      text: "LF-1 (Planen, Vorbereiten und Durchführen von Arbeitsaufgaben in Abstimmung mit kundenspezifischen Geschäfts- und Leistungsprozessen)."
+          value: "Lernfeld-1"
+      text: "Lernfeld 1 beschäftigt sich mit dem Planen, Vorbereiten und Durchführen von Arbeitsaufgaben in Abstimmung mit kundenspezifischen Geschäfts- und Leistungsprozessen. Sehr spannend!"
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-2"
-      text: "LF-2 (Informieren und Beraten von Kunden)."
+          value: "Lernfeld-2"
+      text: "Lernfeld 2 dreht sich um das Informieren und Beraten von Kunden. Ein wichtiger Bestandteil der Ausbildung!"
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-3"
+      text: "Lernfeld 3 befasst sich mit dem Beurteilen marktgängiger IT-Systeme und kundenspezifischer Lösungen. Sehr praxisnah!"
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-4"
+      text: "Lernfeld 4 behandelt das Entwickeln, Erstellen und Betreuen von IT-Lösungen. Ein zentraler Teil der Ausbildung!"
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-3"
-      text: "LF-3 (Beurteilen marktgängiger IT-Systeme und kundenspezifischer Lösungen)."
+          value: "Lernfeld-5"
+      text: "Lernfeld 5 beschäftigt sich mit dem Durchführen und Dokumentieren von qualitätssichernden Maßnahmen."
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-4"
-      text: "LF-4 (Entwickeln, Erstellen und Betreuen von IT-Lösungen)."
+          value: "Lernfeld-6"
+      text: "Lernfeld 6 behandelt das Umsetzen, Integrieren und Prüfen von Maßnahmen zur IT-Sicherheit und zum Datenschutz. Ein spannendes Thema!"
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-5"
-      text: "LF-5 (Durchführen und Dokumentieren von qualitätssichernden Maßnahmen)."
+          value: "Lernfeld-7"
+      text: "Lernfeld 7 dreht sich um das Erbringen der Leistungen und den Auftragsabschluss."
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-6"
-      text: "LF-6 (Umsetzen, Integrieren und Prüfen von Maßnahmen zur IT-Sicherheit und zum Datenschutz)."
+          value: "Lernfeld-8"
+      text: "Lernfeld 8 beschäftigt sich mit dem Betreiben von IT-Systemen. Ein zentraler Bestandteil der IT-Ausbildung!"
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-7"
-      text: "LF-7 (Erbringen der Leistungen und Auftragsabschluss)."
+          value: "Lernfeld-9"
+      text: "Lernfeld 9 behandelt das Inbetriebnehmen von Speicherlösungen. Sehr praxisorientiert!"
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-8"
-      text: "LF-8 (Betreiben von IT-Systemen)."
+          value: "Lernfeld-10"
+      text: "Lernfeld 10 beschäftigt sich mit dem Einsatz von Werkzeugen des maschinellen Lernens. Ein zukunftsweisendes Thema!"
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-9"
-      text: "LF-9 (Inbetriebnehmen von Speicherlösungen)."
+          value: "Lernfeld-11"
+      text: "Lernfeld 11 dreht sich um das Analysieren und Gestalten von Prozessen. Sehr spannend und praxisnah!"
 
     - condition:
         - type: slot
           name: learnfield
-          value: "LF-10"
-      text: "LF-10 (Werkzeuge des maschinellen Lernens einsetzen)."
+          value: "Lernfeld-12"
+      text: "Lernfeld 12 behandelt die kundenspezifische Prozess- und Datenanalyse. Ein wichtiger Teil der IT-Ausbildung!"
+
+  utter_teacher_kontakt:
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Hoyme"
+      text: "Herr Hoyme ist unter jhoyme@ags-erfurt.de zu erreichen."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Frau Rammelt"
+      text: "Die E-Mail-Adresse von Frau Rammelt lautet krammelt@ags-erfurt.de."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Neunemann"
+      text: "Herr Neunemanns Email ist dneunemann@ags-erfurt.de."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Schluckebier"
+      text: "Herr Schluckebier ist unter rschluckebier@ags-erfurt.de zu erreichen."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Frau Allstädt"
+      text: "Frau Allstädts Email lautet kallstaedt@ags-erfurt.de."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Roth"
+      text: "Unter troth@ags-erfurt.de kannst du Herr Roth erreichen."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr von Hornbostel"
+      text: "Herr von Hornbostel ist unter khornbostel@ags-erfurt.de erreichbar."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Frau Göpel"
+      text: "Frau Göpels Email lautet cgoepel@ags-erfurt.de."
 
     - condition:
         - type: slot
-          name: learnfield
-          value: "LF-11"
-      text: "LF-11 (Prozesse analysieren und gestalten)."
+          name: teacher
+          value: "Herr Braun"
+      text: "Herr Braun ist unter fbraun@ags-erfurt.de zu erreichen."
 
     - condition:
         - type: slot
-          name: learnfield
-          value: "LF-12"
-      text: "LF-12 (Kundenspezifische Prozess- und Datenanalyse durchführen)."
-      
-utter_default:
-    - text: "Entschuldigung, das habe ich nicht verstanden. Kannst du das anders formulieren?"
+          name: teacher
+          value: "Herr Haake"
+      text: "Herr Haake ist unter ghaake@ags-erfurt.de zu erreichen."
+
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Frau Minka"
+      text: "Frau Minka ist unter aminka@ags-erfurt.de zu erreichen."
+
+  utter_greet:
+    - text: "Hallo und herzlich willkommen beim FiPi Chatbot! Ich bin dein virtueller Assistent der Andreas Gordon Schule in Erfurt und gebe dir Auskunft über unsere Lehrkräfte sowie die Lernfelder. Wie kann ich dir helfen?"
+    - text: "Schön, dass du hier bist! Ich bin der FiPi Chatbot und stehe dir mit allen Informationen zu Lehrern und Lernfeldern der Andreas Gordon Schule in Erfurt zur Verfügung. Was möchtest du wissen?"
+    - text: "Willkommen beim FiPi Chatbot! Bei uns erhältst du alles Wichtige rund um die Lehrkräfte und Lernfelder der Andreas Gordon Schule in Erfurt. Wie kann ich dich unterstützen?"
+  
+  utter_goodbye:
+    - text: "Vielen Dank für deinen Besuch! Falls du weitere Fragen hast, bin ich jederzeit hier. Auf Wiedersehen!"
+
+actions:
+  - action_session_start
 
 session_config:
   session_expiration_time: 60

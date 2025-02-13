@@ -18,5 +18,10 @@ stories:
 
   - story: Anfrage nach Inhalt von Lernfeld
     steps:
-      - intent: information_lernfeld
-      - action: utter_information_lernfeld
+      - intent: information_learnfield
+      - action: utter_information_learnfield
+
+  - story: Anfrage nach Kontaktinformationen eines Lehrers
+    steps:
+      - intent: teacher_kontakt
+      - action: utter_teacher_kontakt

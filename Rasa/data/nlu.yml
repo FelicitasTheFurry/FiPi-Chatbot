@@ -87,15 +87,101 @@ nlu:
 
   - intent: information_learnfield
     examples: |
-      - Was ist [LF-1](learnfield)?
-      - Erkläre [LF-2](learnfield)
-      - Wofür steht [LF-3](learnfield)?
-      - Was bedeutet [LF-4](learnfield)?
-      - Worum geht es in [LF-5](learnfield)?
-      - Was beinhaltet [LF-6](learnfield)?
-      - Beschreibe [LF-7](learnfield)
-      - Was ist eigentlich [LF-8](learnfield)?
-      - Was lernt man in [LF-9](learnfield)?
-      - Kannst du mir [LF-10](learnfield) erklären?
-      - Wie lautet die Beschreibung von [LF-11](learnfield)?
-      - Erkläre mir bitte [LF-12](learnfield)
+      - Was ist [Lernfeld 1](learnfield)?
+      - Erkläre [Lernfeld-2](learnfield)
+      - Wofür steht [Lernfeld-3](learnfield)?
+      - Was bedeutet [Lernfeld-4](learnfield)?
+      - Worum geht es in [Lernfeld-5](learnfield)?
+      - Was beinhaltet [Lernfeld-6](learnfield)?
+      - Beschreibe [Lernfeld-7](learnfield)
+      - Was ist eigentlich [Lernfeld-8](learnfield)?
+      - Was lernt man in [Lernfeld-9](learnfield)?
+      - Kannst du mir [Lernfeld-10](learnfield) erklären?
+      - Wie lautet die Beschreibung von [Lernfeld-11](learnfield)?
+      - Erkläre mir bitte [Lernfeld-12](learnfield)
+
+
+  - intent: teacher_kontakt
+    examples: |
+      - Ich brauche die Kontaktdaten von [Herr Hoyme](teacher)
+      - Hast du die E-Mail von [Herr Hoyme](teacher)?
+      - Wie kann ich [Herr Hoyme](teacher) erreichen?
+      - Kennst du die Mailadresse von [Herr Hoyme](teacher)?
+      - Ich möchte [Herr Hoyme](teacher) kontaktieren, hast du Infos?
+      - Ich brauche die Kontaktdaten von [Frau Rammelt](teacher)
+      - Hast du die E-Mail von [Frau Rammelt](teacher)?
+      - Wie kann ich [Frau Rammelt](teacher) erreichen?
+      - Kennst du die Mailadresse von [Frau Rammelt](teacher)?
+      - Ich möchte [Frau Rammelt](teacher) kontaktieren, hast du Infos?
+      - Ich brauche die Kontaktdaten von [Herr Neunemann](teacher)
+      - Hast du die E-Mail von [Herr Neunemann](teacher)?
+      - Wie kann ich [Herr Neunemann](teacher) erreichen?
+      - Kennst du die Mailadresse von [Herr Neunemann](teacher)?
+      - Ich möchte [Herr Neunemann](teacher) kontaktieren, hast du Infos?
+      - Ich brauche die Kontaktdaten von [Herr Roth](teacher)
+      - Hast du die E-Mail von [Herr Roth](teacher)?
+      - Wie kann ich [Herr Roth](teacher) erreichen?
+      - Kennst du die Mailadresse von [Herr Roth](teacher)?
+      - Ich möchte [Herr Roth](teacher) kontaktieren, hast du Infos?
+      - Ich brauche die Kontaktdaten von [Herr von Hornbostel](teacher)
+      - Hast du die E-Mail von [Herr von Hornbostel](teacher)?
+      - Wie kann ich [Herr von Hornbostel](teacher) erreichen?
+      - Kennst du die Mailadresse von [Herr von Hornbostel](teacher)?
+      - Ich möchte [Herr von Hornbostel](teacher) kontaktieren, hast du Infos?
+      - Ich brauche die Kontaktdaten von [Frau Allstädt](teacher)
+      - Hast du die E-Mail von [Frau Allstädt](teacher)?
+      - Wie kann ich [Frau Allstädt](teacher) erreichen?
+      - Kennst du die Mailadresse von [Frau Allstädt](teacher)?
+      - Ich möchte [Frau Allstädt](teacher) kontaktieren, hast du Infos?
+      - Ich brauche die Kontaktdaten von [Herr Schluckebier](teacher)
+      - Hast du die E-Mail von [Herr Schluckebier](teacher)?
+      - Wie kann ich [Herr Schluckebier](teacher) erreichen?
+      - Kennst du die Mailadresse von [Herr Schluckebier](teacher)?
+      - Ich möchte [Herr Schluckebier](teacher) kontaktieren, hast du Infos?
+      - Ich brauche die Kontaktdaten von [Frau Göpel](teacher)
+      - Hast du die E-Mail von [Frau Göpel](teacher)?
+      - Wie kann ich [Frau Göpel](teacher) erreichen?
+      - Kennst du die Mailadresse von [Frau Göpel](teacher)?
+      - Ich möchte [Frau Göpel](teacher) kontaktieren, hast du Infos?
+      - Ich brauche die Kontaktdaten von [Herr Hacke](teacher)
+      - Hast du die E-Mail von [Herr Hacke](teacher)?
+      - Wie kann ich [Herr Hacke](teacher) erreichen?
+      - Kennst du die Mailadresse von [Herr Hacke](teacher)?
+      - Ich möchte [Herr Hacke](teacher) kontaktieren, hast du Infos?
+
+  - intent: greet
+    examples: |
+      - Hallo
+      - Hi
+      - Guten Tag
+      - Guten Morgen
+      - Guten Abend
+      - Hey
+      - Moin
+      - Servus
+      - Moinsen
+      - Nabend
+      - Nabend zusammen
+      - Hallo zusammen
+      - Hi zusammen
+      - Hallo Leute
+      - Hi Leute
+
+
+  - intent: goodbye
+    examples: |
+      - Tschüss
+      - Auf Wiedersehen
+      - Bis bald
+      - Bis später
+      - Bis dann
+      - Mach's gut
+      - Tschau
+      - Ciao
+      - Bye
+      - Auf Wiederhören
+      - Tschüssi
+      - Tschüssikowski
+      - Tschüssikowsky
+      
+

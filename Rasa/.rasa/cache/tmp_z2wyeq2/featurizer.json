@@ -1,0 +1,58 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "information_learnfield": 1,
+        "lehrer_fuer_fach": 2,
+        "lehrer_fuer_lernfeld": 3,
+        "lehrer_taetigkeit": 4,
+        "nlu_fallback": 5,
+        "out_of_scope": 6,
+        "restart": 7,
+        "session_start": 8,
+        "teacher_kontakt": 9
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_information_learnfield": 13,
+        "utter_lehrer_fuer_fach": 14,
+        "utter_lehrer_fuer_lernfeld": 15,
+        "utter_lehrer_taetigkeit": 16,
+        "utter_teacher_kontakt": 17
+      },
+      "entities": {
+        "fach": 0,
+        "learnfield": 1,
+        "lehrer": 2,
+        "lernfeld": 3,
+        "teacher": 4
+      },
+      "slots": {
+        "lernfeld_0": 0,
+        "fach_0": 1,
+        "lehrer_0": 2,
+        "learnfield_0": 3,
+        "teacher_0": 4
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

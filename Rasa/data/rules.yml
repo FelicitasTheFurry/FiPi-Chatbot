@@ -18,5 +18,21 @@ rules:
 
   - rule: Anfrage nach Inhalt von Lernfeld
     steps:
-      - intent: information_lernfeld
-      - action: utter_information_lernfeld
+      - intent: information_learnfield
+      - action: utter_information_learnfield
+
+  - rule: Anfrage nach Kontaktinformationen eines Lehrers
+    steps:
+      - intent: teacher_kontakt
+      - action: utter_teacher_kontakt
+
+
+  - rule: Hallo Sagen
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Tschüss Sagen
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
