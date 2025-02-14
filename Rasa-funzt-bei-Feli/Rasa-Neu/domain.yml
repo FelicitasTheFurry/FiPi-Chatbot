@@ -1,0 +1,321 @@
+version: "3.1"
+
+intents:
+  - lehrer_fuer_lernfeld
+  - lehrer_fuer_fach
+  - lehrer_taetigkeit
+  - information_learnfield
+  - teacher_kontakt
+  - greet
+  - goodbye
+
+entities:
+  - lernfeld
+  - fach
+  - lehrer
+  - learnfield
+  - teacher
+
+slots:
+  lernfeld:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: lernfeld
+
+  fach:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: fach
+
+  lehrer:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: lehrer
+  
+  learnfield:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: learnfield
+
+  teacher:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: teacher
+
+responses:
+  utter_lehrer_fuer_lernfeld:
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-1"
+      text: "Natürlich. Lernfeld 1 wird von Herr Hoyme unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-2"
+      text: "Ach, Lernfeld 2! Das wird von Herr Roth und Herr Neunemann unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-3"
+      text: "Lernfeld 3 wird von Herr Neunemann unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-4"
+      text: "Lernfeld 4 wird von Herr Schluckebier unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-5"
+      text: "Natürlich! Lernfeld 5 wird von Frau Rammelt unterrichtet. Sie ist eine sehr kompetente Lehrkraft."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-6"
+      text: "Lernfeld 6 wird von Herr Roth unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-7"
+      text: "Kein Problem! Lernfeld 7 wird von Herr Schluckebier unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-8"
+      text: "Lernfeld 8 wird von Frau Rammelt unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-9"
+      text: "Lernfeld 9 wird von Herr Brau, Herr Haake und Herr Neunemann unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-10"
+      text: "Lernfeld 10 wird von Herr von Hornbostel unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-11"
+      text: "Lernfeld 11 wird von Frau Rammelt unterrichtet."
+    - condition:
+        - type: slot
+          name: lernfeld
+          value: "LF-12"
+      text: "Lernfeld 12 wird von Frau Rammelt und Herr von Hornbostel unterrichtet. Ein starkes Duo!"
+
+  utter_lehrer_fuer_fach:
+    - condition:
+        - type: slot
+          name: fach
+          value: "Deutsch"
+      text: "Deutsch wird von Frau Allstädt unterrichtet."
+    - condition:
+        - type: slot
+          name: fach
+          value: "Englisch"
+      text: "Englisch wird von Herr Hoyme unterrichtet."
+    - condition:
+        - type: slot
+          name: fach
+          value: "Ethik"
+      text: "Ethik wird von Frau Allstädt unterrichtet."
+    - condition:
+        - type: slot
+          name: fach
+          value: "Sozialkunde"
+      text: "Sozialkunde wird von Frau Göpel unterrichtet."
+    - condition:
+        - type: slot
+          name: fach
+          value: "Sport"
+      text: "Sport wird von Herr Neunemann unterrichtet."
+
+  utter_lehrer_taetigkeit:
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr Hoyme"
+        text: "Herr Hoyme unterrichtet Lernfeld 1 und Englisch."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Frau Rammelt"
+        text: "Frau Rammelt unterrichtet Lernfeld 5, 8, 11 und 12."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr Neunemann"
+        text: "Herr Neunemann unterrichtet Lernfeld 2, 3, 9 und Sport."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr Schluckebier"
+        text: "Herr Schluckebier unterrichtet Lernfeld 4 und 7."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Frau Allstädt"
+        text: "Frau Allstädt unterrichtet Deutsch und Ethik."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr Roth"
+        text: "Herr Roth unterrichtet Lernfeld 2 und 6."
+      - condition:
+        - type: slot
+          name: lehrer
+          value: "Herr von Hornbostel"
+        text: "Herr von Hornbostel unterrichtet Lernfeld 10 und 12."
+
+  utter_information_learnfield:
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-1"
+      text: "Lernfeld 1 beschäftigt sich mit dem Planen, Vorbereiten und Durchführen von Arbeitsaufgaben in Abstimmung mit kundenspezifischen Geschäfts- und Leistungsprozessen. Sehr spannend!"
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-2"
+      text: "Lernfeld 2 dreht sich um das Informieren und Beraten von Kunden. Ein wichtiger Bestandteil der Ausbildung!"
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-3"
+      text: "Lernfeld 3 befasst sich mit dem Beurteilen marktgängiger IT-Systeme und kundenspezifischer Lösungen. Sehr praxisnah!"
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-4"
+      text: "Lernfeld 4 behandelt das Entwickeln, Erstellen und Betreuen von IT-Lösungen. Ein zentraler Teil der Ausbildung!"
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-5"
+      text: "Lernfeld 5 beschäftigt sich mit dem Durchführen und Dokumentieren von qualitätssichernden Maßnahmen."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-6"
+      text: "Lernfeld 6 behandelt das Umsetzen, Integrieren und Prüfen von Maßnahmen zur IT-Sicherheit und zum Datenschutz. Ein spannendes Thema!"
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-7"
+      text: "Lernfeld 7 dreht sich um das Erbringen der Leistungen und den Auftragsabschluss."
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-8"
+      text: "Lernfeld 8 beschäftigt sich mit dem Betreiben von IT-Systemen. Ein zentraler Bestandteil der IT-Ausbildung!"
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-9"
+      text: "Lernfeld 9 behandelt das Inbetriebnehmen von Speicherlösungen. Sehr praxisorientiert!"
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-10"
+      text: "Lernfeld 10 beschäftigt sich mit dem Einsatz von Werkzeugen des maschinellen Lernens. Ein zukunftsweisendes Thema!"
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-11"
+      text: "Lernfeld 11 dreht sich um das Analysieren und Gestalten von Prozessen. Sehr spannend und praxisnah!"
+
+    - condition:
+        - type: slot
+          name: learnfield
+          value: "Lernfeld-12"
+      text: "Lernfeld 12 behandelt die kundenspezifische Prozess- und Datenanalyse. Ein wichtiger Teil der IT-Ausbildung!"
+
+  utter_teacher_kontakt:
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Hoyme"
+      text: "Herr Hoyme ist unter jhoyme@ags-erfurt.de zu erreichen."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Frau Rammelt"
+      text: "Die E-Mail-Adresse von Frau Rammelt lautet krammelt@ags-erfurt.de."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Neunemann"
+      text: "Herr Neunemanns Email ist dneunemann@ags-erfurt.de."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Schluckebier"
+      text: "Herr Schluckebier ist unter rschluckebier@ags-erfurt.de zu erreichen."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Frau Allstädt"
+      text: "Frau Allstädts Email lautet kallstaedt@ags-erfurt.de."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Roth"
+      text: "Unter troth@ags-erfurt.de kannst du Herr Roth erreichen."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr von Hornbostel"
+      text: "Herr von Hornbostel ist unter khornbostel@ags-erfurt.de erreichbar."
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Frau Göpel"
+      text: "Frau Göpels Email lautet cgoepel@ags-erfurt.de."
+
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Braun"
+      text: "Herr Braun ist unter fbraun@ags-erfurt.de zu erreichen."
+
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Herr Haake"
+      text: "Herr Haake ist unter ghaake@ags-erfurt.de zu erreichen."
+
+    - condition:
+        - type: slot
+          name: teacher
+          value: "Frau Minka"
+      text: "Frau Minka ist unter aminka@ags-erfurt.de zu erreichen."
+
+  utter_greet:
+    - text: "Hallo und herzlich willkommen beim FiPi Chatbot! Ich bin dein virtueller Assistent der Andreas Gordon Schule in Erfurt und gebe dir Auskunft über unsere Lehrkräfte sowie die Lernfelder. Wie kann ich dir helfen?"
+    - text: "Schön, dass du hier bist! Ich bin der FiPi Chatbot und stehe dir mit allen Informationen zu Lehrern und Lernfeldern der Andreas Gordon Schule in Erfurt zur Verfügung. Was möchtest du wissen?"
+    - text: "Willkommen beim FiPi Chatbot! Bei uns erhältst du alles Wichtige rund um die Lehrkräfte und Lernfelder der Andreas Gordon Schule in Erfurt. Wie kann ich dich unterstützen?"
+  
+  utter_goodbye:
+    - text: "Vielen Dank für deinen Besuch! Falls du weitere Fragen hast, bin ich jederzeit hier. Auf Wiedersehen!"
+
+#actions:
+#  - action_session_start
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
