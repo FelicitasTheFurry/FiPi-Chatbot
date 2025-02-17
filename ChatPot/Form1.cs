@@ -1,17 +1,14 @@
+using ChatPot.Extensions;
 using Newtonsoft.Json.Linq;
-using System.Drawing.Printing;
-using System.Management.Automation;
-using System.Net.Http.Json;
+using NLog.LayoutRenderers;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using ChatPot.Extensions;
-using System.Diagnostics;
 
 namespace ChatPot
 {
     public partial class Form1 : Form
     {
+        static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         string rasaUrl = "http://localhost:5005/webhooks/rest/webhook";
         public Form1()
         {
@@ -23,8 +20,8 @@ namespace ChatPot
         {
             var response = await SendMessageToRasa(rasaUrl, "Moin");
 
-            richTextBox1.AppendText("Bot: ", Color.Blue);
-            richTextBox1.AppendText(response);
+            AusgabeBox.AppendText("Bot: ", Color.Blue);
+            AusgabeBox.AppendText(response);
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -37,17 +34,17 @@ namespace ChatPot
             //    process.StartInfo.FileName = "shutdown.exe";
             //    process.Start();
             //}
-            richTextBox1.AppendText(Environment.NewLine + "User: " , Color.Brown);
-            richTextBox1.AppendText(input);
+            AusgabeBox.AppendText(Environment.NewLine + "User: ", Color.Brown);
+            AusgabeBox.AppendText(input);
             var response = await SendMessageToRasa(rasaUrl, input);
 
-            if(!response.Equals("Kannst du das nochmal umformulieren? Vielleicht fehlt ja auch ein Bindestrich."))
+            if (!response.Equals("Kannst du das nochmal umformulieren? Vielleicht fehlt ja auch ein Bindestrich."))
             {
                 textBox1.Text = string.Empty;
             }
-            richTextBox1.AppendText(Environment.NewLine + "Bot: ", Color.Blue);
-            richTextBox1.AppendText(response);
-            
+            AusgabeBox.AppendText(Environment.NewLine + "Bot: ", Color.Blue);
+            AusgabeBox.AppendText(response);
+
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -59,6 +56,8 @@ namespace ChatPot
         }
         static async Task<string> SendMessageToRasa(string url, string message)
         {
+            logger.Debug("User writes: " + message);
+            string temp = String.Empty;
             using HttpClient client = new HttpClient();
             var jsonContent = new
             {
@@ -68,19 +67,28 @@ namespace ChatPot
 
             string json = JsonSerializer.Serialize(jsonContent);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
+            try
+            {
+                HttpResponseMessage response = await client.PostAsync(url, content);
+                response.EnsureSuccessStatusCode();
 
-            HttpResponseMessage response = await client.PostAsync(url, content);
-            response.EnsureSuccessStatusCode();
+                //ExtractText(response.Content.ReadAsStringAsync());
+                var newJson = await response.Content.ReadAsStringAsync();
+                temp = ExtractText(newJson);
+                logger.Debug("Bots response was: " + temp);
+            }
+            catch (Exception ex)
+            {
+                logger.Error("Es ist ein Fehler aufgetreten.");
+                logger.Error(ex);
+            }
 
-            //ExtractText(response.Content.ReadAsStringAsync());
-            var newJson = await response.Content.ReadAsStringAsync();
-            string temp = ExtractText(newJson);
-            if(temp.Length==0)
+            if (temp.Length == 0)
             {
                 temp = "Kannst du das nochmal umformulieren? Vielleicht fehlt ja auch ein Bindestrich.";
             }
 
-             return temp;
+            return temp;
         }
 
         static string ExtractText(string jsonString)
@@ -95,11 +103,20 @@ namespace ChatPot
             catch (Exception ex)
             {
                 Console.WriteLine($"Fehler: {ex.Message}");
+
+                logger.Error("Es ist ein Fehler aufgetreten.");
+                logger.Error(ex);
+
                 return string.Empty;
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }

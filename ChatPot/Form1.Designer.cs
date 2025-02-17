@@ -30,44 +30,81 @@ namespace ChatPot
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            components = new System.ComponentModel.Container();
             button1 = new Button();
-            richTextBox1 = new RichTextBox();
+            AusgabeBox = new RichTextBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            textBox1 = new TextBox();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            contextMenuStrip1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.Bisque;
-            textBox1.Dock = DockStyle.Bottom;
-            textBox1.Location = new Point(0, 695);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(460, 27);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
-            textBox1.KeyDown += textBox1_KeyDown;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.Desktop;
+            button1.Dock = DockStyle.Fill;
             button1.ForeColor = Color.Lime;
-            button1.Location = new Point(422, 695);
+            button1.Location = new Point(417, 3);
             button1.Name = "button1";
-            button1.Size = new Size(38, 27);
+            button1.Size = new Size(40, 26);
             button1.TabIndex = 2;
             button1.Text = "➜";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // richTextBox1
+            // AusgabeBox
             // 
-            richTextBox1.BackColor = Color.PeachPuff;
-            richTextBox1.Dock = DockStyle.Fill;
-            richTextBox1.Location = new Point(0, 0);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new Size(460, 695);
-            richTextBox1.TabIndex = 3;
-            richTextBox1.Text = "";
+            AusgabeBox.BackColor = Color.PeachPuff;
+            AusgabeBox.Dock = DockStyle.Fill;
+            AusgabeBox.Location = new Point(0, 0);
+            AusgabeBox.Name = "AusgabeBox";
+            AusgabeBox.ReadOnly = true;
+            AusgabeBox.Size = new Size(460, 722);
+            AusgabeBox.TabIndex = 99;
+            AusgabeBox.TabStop = false;
+            AusgabeBox.Text = "";
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(159, 28);
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(158, 24);
+            toolStripMenuItem1.Text = "Farbwechsel";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Bisque;
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Location = new Point(3, 3);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(408, 27);
+            textBox1.TabIndex = 0;
+            textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyDown += textBox1_KeyDown;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 46F));
+            tableLayoutPanel1.Controls.Add(button1, 1, 0);
+            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Bottom;
+            tableLayoutPanel1.Location = new Point(0, 690);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(460, 32);
+            tableLayoutPanel1.TabIndex = 4;
             // 
             // Form1
             // 
@@ -75,18 +112,18 @@ namespace ChatPot
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PeachPuff;
             ClientSize = new Size(460, 722);
-            Controls.Add(richTextBox1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(AusgabeBox);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Form1";
             Text = "FiPi-Chatbot";
+            contextMenuStrip1.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private TextBox textBox1;
         private Button button1;
 
         //private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
@@ -116,6 +153,10 @@ namespace ChatPot
         //        e.ItemHeight = itemHeight; // Setze die Höhe für das aktuelle Item
         //    }
         //}
-        private RichTextBox richTextBox1;
+        private RichTextBox AusgabeBox;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private TextBox textBox1;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

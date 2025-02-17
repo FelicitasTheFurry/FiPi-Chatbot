@@ -22,14 +22,5 @@ namespace ChatPot.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Urst-Fipis-Projekt\\Test\\FiPi-Chatbot\\Rasa")]
-        public string rasa_path {
-            get {
-                return ((string)(this["rasa_path"]));
-            }
-        }
     }
 }
