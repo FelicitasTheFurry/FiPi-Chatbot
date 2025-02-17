@@ -6,11 +6,11 @@ using System.Text.Json;
 
 namespace ChatPot
 {
-    public partial class Form1 : Form
+    public partial class Chatbotbeispiel : Form
     {
         static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         string rasaUrl = "http://localhost:5005/webhooks/rest/webhook";
-        public Form1()
+        public Chatbotbeispiel()
         {
             InitializeComponent();
             Start();
@@ -24,34 +24,28 @@ namespace ChatPot
             AusgabeBox.AppendText(response);
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void EingabeBestaetigung_Click(object sender, EventArgs e)
         {
-            string input = textBox1.Text;
-            //if(input.ToLower().Equals("ah"))
-            //{
-            //    var process = new Process();
-            //    process.StartInfo.Arguments = "/r";
-            //    process.StartInfo.FileName = "shutdown.exe";
-            //    process.Start();
-            //}
+            string input = EingabeBenutzer.Text;
+            
             AusgabeBox.AppendText(Environment.NewLine + "User: ", Color.Brown);
             AusgabeBox.AppendText(input);
             var response = await SendMessageToRasa(rasaUrl, input);
 
             if (!response.Equals("Kannst du das nochmal umformulieren? Vielleicht fehlt ja auch ein Bindestrich."))
             {
-                textBox1.Text = string.Empty;
+                EingabeBenutzer.Text = string.Empty;
             }
             AusgabeBox.AppendText(Environment.NewLine + "Bot: ", Color.Blue);
             AusgabeBox.AppendText(response);
 
         }
 
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        private void EingabeBenutzer_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                button1_Click(this, new EventArgs());
+                EingabeBestaetigung_Click(this, new EventArgs());
             }
         }
         static async Task<string> SendMessageToRasa(string url, string message)
@@ -111,14 +105,6 @@ namespace ChatPot
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

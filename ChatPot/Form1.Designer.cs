@@ -2,7 +2,7 @@
 
 namespace ChatPot
 {
-    partial class Form1
+    partial class Chatbotbeispiel
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,29 +30,26 @@ namespace ChatPot
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            button1 = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chatbotbeispiel));
+            EingebeBestaetigung = new Button();
             AusgabeBox = new RichTextBox();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            textBox1 = new TextBox();
+            EingabeBenutzer = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            contextMenuStrip1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // EingebeBestaetigung
             // 
-            button1.BackColor = SystemColors.Desktop;
-            button1.Dock = DockStyle.Fill;
-            button1.ForeColor = Color.Lime;
-            button1.Location = new Point(417, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(40, 26);
-            button1.TabIndex = 2;
-            button1.Text = "➜";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            EingebeBestaetigung.BackColor = SystemColors.Desktop;
+            EingebeBestaetigung.Dock = DockStyle.Fill;
+            EingebeBestaetigung.ForeColor = Color.Lime;
+            EingebeBestaetigung.Location = new Point(417, 3);
+            EingebeBestaetigung.Name = "EingebeBestaetigung";
+            EingebeBestaetigung.Size = new Size(40, 26);
+            EingebeBestaetigung.TabIndex = 2;
+            EingebeBestaetigung.Text = "➜";
+            EingebeBestaetigung.UseVisualStyleBackColor = false;
+            EingebeBestaetigung.Click += EingabeBestaetigung_Click;
             // 
             // AusgabeBox
             // 
@@ -66,38 +63,23 @@ namespace ChatPot
             AusgabeBox.TabStop = false;
             AusgabeBox.Text = "";
             // 
-            // contextMenuStrip1
+            // EingabeBenutzer
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(159, 28);
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(158, 24);
-            toolStripMenuItem1.Text = "Farbwechsel";
-            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.Bisque;
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(3, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(408, 27);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
-            textBox1.KeyDown += textBox1_KeyDown;
+            EingabeBenutzer.BackColor = Color.Bisque;
+            EingabeBenutzer.Dock = DockStyle.Fill;
+            EingabeBenutzer.Location = new Point(3, 3);
+            EingabeBenutzer.Name = "EingabeBenutzer";
+            EingabeBenutzer.Size = new Size(408, 27);
+            EingabeBenutzer.TabIndex = 0;
+            EingabeBenutzer.KeyDown += EingabeBenutzer_KeyDown;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 46F));
-            tableLayoutPanel1.Controls.Add(button1, 1, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(EingebeBestaetigung, 1, 0);
+            tableLayoutPanel1.Controls.Add(EingabeBenutzer, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
             tableLayoutPanel1.Location = new Point(0, 690);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -106,7 +88,7 @@ namespace ChatPot
             tableLayoutPanel1.Size = new Size(460, 32);
             tableLayoutPanel1.TabIndex = 4;
             // 
-            // Form1
+            // Chatbotbeispiel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -115,16 +97,16 @@ namespace ChatPot
             Controls.Add(tableLayoutPanel1);
             Controls.Add(AusgabeBox);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "Form1";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "Chatbotbeispiel";
             Text = "FiPi-Chatbot";
-            contextMenuStrip1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private Button button1;
+        private Button EingebeBestaetigung;
 
         //private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
         //{
@@ -154,9 +136,7 @@ namespace ChatPot
         //    }
         //}
         private RichTextBox AusgabeBox;
-        private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private TextBox textBox1;
+        private TextBox EingabeBenutzer;
         private TableLayoutPanel tableLayoutPanel1;
     }
 }
