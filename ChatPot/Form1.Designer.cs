@@ -35,7 +35,9 @@ namespace ChatPot
             AusgabeBox = new RichTextBox();
             EingabeBenutzer = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // EingebeBestaetigung
@@ -43,9 +45,12 @@ namespace ChatPot
             EingebeBestaetigung.BackColor = SystemColors.Desktop;
             EingebeBestaetigung.Dock = DockStyle.Fill;
             EingebeBestaetigung.ForeColor = Color.Lime;
-            EingebeBestaetigung.Location = new Point(417, 3);
+            EingebeBestaetigung.Location = new Point(362, 0);
+            EingebeBestaetigung.Margin = new Padding(0);
+            EingebeBestaetigung.MaximumSize = new Size(40, 29);
+            EingebeBestaetigung.MinimumSize = new Size(40, 29);
             EingebeBestaetigung.Name = "EingebeBestaetigung";
-            EingebeBestaetigung.Size = new Size(40, 26);
+            EingebeBestaetigung.Size = new Size(40, 29);
             EingebeBestaetigung.TabIndex = 2;
             EingebeBestaetigung.Text = "➜";
             EingebeBestaetigung.UseVisualStyleBackColor = false;
@@ -55,10 +60,11 @@ namespace ChatPot
             // 
             AusgabeBox.BackColor = Color.PeachPuff;
             AusgabeBox.Dock = DockStyle.Fill;
-            AusgabeBox.Location = new Point(0, 0);
+            AusgabeBox.Location = new Point(3, 2);
+            AusgabeBox.Margin = new Padding(3, 2, 3, 2);
             AusgabeBox.Name = "AusgabeBox";
             AusgabeBox.ReadOnly = true;
-            AusgabeBox.Size = new Size(460, 722);
+            AusgabeBox.Size = new Size(396, 512);
             AusgabeBox.TabIndex = 99;
             AusgabeBox.TabStop = false;
             AusgabeBox.Text = "";
@@ -66,10 +72,12 @@ namespace ChatPot
             // EingabeBenutzer
             // 
             EingabeBenutzer.BackColor = Color.Bisque;
+            EingabeBenutzer.BorderStyle = BorderStyle.FixedSingle;
             EingabeBenutzer.Dock = DockStyle.Fill;
-            EingabeBenutzer.Location = new Point(3, 3);
+            EingabeBenutzer.Location = new Point(0, 0);
+            EingabeBenutzer.Margin = new Padding(0);
             EingabeBenutzer.Name = "EingabeBenutzer";
-            EingabeBenutzer.Size = new Size(408, 27);
+            EingabeBenutzer.Size = new Size(362, 23);
             EingabeBenutzer.TabIndex = 0;
             EingabeBenutzer.KeyDown += EingabeBenutzer_KeyDown;
             // 
@@ -77,31 +85,49 @@ namespace ChatPot
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 46F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.Controls.Add(EingebeBestaetigung, 1, 0);
             tableLayoutPanel1.Controls.Add(EingabeBenutzer, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Bottom;
-            tableLayoutPanel1.Location = new Point(0, 690);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 516);
+            tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(460, 32);
+            tableLayoutPanel1.Size = new Size(402, 26);
             tableLayoutPanel1.TabIndex = 4;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Controls.Add(AusgabeBox, 0, 0);
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel1, 0, 1);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(0, 0, 0, 5);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 95.3F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 4.7F));
+            tableLayoutPanel2.Size = new Size(402, 542);
+            tableLayoutPanel2.TabIndex = 100;
             // 
             // Chatbotbeispiel
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PeachPuff;
-            ClientSize = new Size(460, 722);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(AusgabeBox);
+            ClientSize = new Size(402, 542);
+            Controls.Add(tableLayoutPanel2);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Chatbotbeispiel";
             Text = "FiPi-Chatbot";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -138,5 +164,6 @@ namespace ChatPot
         private RichTextBox AusgabeBox;
         private TextBox EingabeBenutzer;
         private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
     }
 }

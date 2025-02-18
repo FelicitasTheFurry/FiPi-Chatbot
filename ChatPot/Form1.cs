@@ -60,10 +60,10 @@ namespace ChatPot
             };
 
             string json = JsonSerializer.Serialize(jsonContent);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var userInput = new StringContent(json, Encoding.UTF8, "application/json");
             try
             {
-                HttpResponseMessage response = await client.PostAsync(url, content);
+                HttpResponseMessage response = await client.PostAsync(url, userInput);
                 response.EnsureSuccessStatusCode();
 
                 //ExtractText(response.Content.ReadAsStringAsync());
@@ -91,13 +91,10 @@ namespace ChatPot
             {
                 JArray jsonArray = JArray.Parse(jsonString);
 
-                string temp = jsonArray[0]["text"].ToString();
                 return jsonArray[0]["text"].ToString();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Fehler: {ex.Message}");
-
                 logger.Error("Es ist ein Fehler aufgetreten.");
                 logger.Error(ex);
 
